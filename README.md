@@ -18,7 +18,7 @@ La clase base Video define atributos y métodos comunes para todo contenido de v
 
 ## 2. **Errores de compilación**
 
-**Headers mal incluidos**: Si olvido incluir las librerías necesarias como '<iostream> o '<string>'
+**Headers mal incluidos**: Si olvido incluir las librerías necesarias como "iostream" o "string"
 
 **Dependencias circulares**: Si Video.h incluye Serie.h y Serie.h incluye Video.h, el compilador se podria confundir.
 
