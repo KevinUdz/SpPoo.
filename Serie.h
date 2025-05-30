@@ -17,6 +17,9 @@ public:
 
     // Método que demuestra el acceso a métodos heredados
     void mostrarDetallesSerie();
+
+    // Mismo caso que con 'Pelicula.h'
+    void mostrarDetalles() override;
 };
 
 // Implementación del constructor, esto demostrara la herencia correcta
@@ -44,6 +47,12 @@ inline void Serie::mostrarDetallesSerie() {
     cout << "Duracion promedio por episodio: " << getDuracion() << " minutos" << endl;
     cout << "Genero: " << getGenero() << endl;
     cout << "Calificacion promedio: " << getCalificacion() << "/5" << endl;
+}
+
+// Al tratar de correr el codigo con la implementación de polimorfismo me soltaba un error que me decia que no estaba implementando al 100% una funcioj virtual pura
+// Po resto mismo implemente un metodo virtual puro para video y asi logre que corriera el cogido
+inline void Serie::mostrarDetalles() {
+    mostrarDetallesSerie();
 }
 
 #endif
