@@ -17,13 +17,15 @@ public:
 
     // Método que demuestra acceso a métodos heredados
     void mostrarDetallesPelicula();
+
+    // Aun no me queda del todo claro la sobreescritura pero la trato de implementar para lograr el polimorofismo
+    void mostrarDetalles() override;
 };
 
 // Se implementa un constructor que demuestra la herencia correcta
 inline Pelicula::Pelicula(int i, string n, double d, string g, double c)
     : Video(i, n, d, g, c) {
     // Constructor base Video() 
-    // Aquí se podrían inicializar atributos específicos de Pelicula
 }
 
 // Método para mostrar los datos de la película
@@ -36,7 +38,7 @@ inline void Pelicula::mostrarPelicula() {
 
 // Método que demuestra el uso de herencia y acceso a métodos públicos
 inline void Pelicula::mostrarDetallesPelicula() {
-    cout << " DETALLES DE LA PELICULA " << endl;
+    cout << "=== DETALLES DE LA PELICULA ===" << endl;
     cout << "Tipo: Pelicula" << endl;
     
     // Accede a atributos privados a través de métodos públicos heredados
@@ -46,6 +48,11 @@ inline void Pelicula::mostrarDetallesPelicula() {
     cout << "Genero: " << getGenero() << endl;
     cout << "Calificacion: " << getCalificacion() << "/5" << endl;
     
+}
+
+// Mismo caso que con 'serie' con la diferencia de que ahora fue en 'pelicula'
+inline void Pelicula::mostrarDetalles() {
+    mostrarDetallesPelicula();
 }
 
 #endif
