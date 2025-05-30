@@ -44,6 +44,11 @@ public:
 
     // Método para mostrar la información general del video
     void mostrarInfo();
+
+    // Implemento polimorfismo con el metodo virual visto en clase
+    virtual void mostrarDetalles() = 0;
+    virtual ~Video() {} // Destructor virtual
+
 };
 
 // Implemento el constructor
