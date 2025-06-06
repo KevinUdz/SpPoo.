@@ -11,7 +11,7 @@ using namespace std;
 // Clase general para los videos
 class Video {
 private:
-    // Atributos privados - solo accesibles desde la misma clase
+    // Atributos privados, solo seran accesibles desde la misma clase
     int id;                 // Identificador único del video
     string nombre;          // Nombre del video
     double duracion;        // Duración en minutos
@@ -19,23 +19,23 @@ private:
     double calificacion;    // Calificación promedio (1 a 5)
 
 protected:
-    // Métodos protegidos - accesibles desde clases derivadas
+    // Métodos protegidos que solo seran accesibles desde clases derivadas
     void mostrarInfoBasica();
 
 public:
-    // Métodos públicos - accesibles desde cualquier lugar
+    // Métodos públicos, seran accesibles desde cualquier lugar
     
     // Constructor
     Video(int i, string n, double d, string g, double c);
 
-    // Métodos getter para acceder a atributos privados
+    // Incluyo métodos getter para acceder a atributos privados
     int getId();
     string getNombre();
     double getDuracion();
     string getGenero();
     double getCalificacion();
 
-    // Métodos setter para modificar atributos privados
+    // De igual manera incluire métodos setter para modificar atributos privados
     void setId(int i);
     void setNombre(string n);
     void setDuracion(double d);
@@ -47,8 +47,18 @@ public:
 
     // Implemento polimorfismo con el metodo virual visto en clase
     virtual void mostrarDetalles() = 0;
-    virtual ~Video() {} // Destructor virtual
+    virtual void reproducir() = 0;
 
+    virtual void pausar () {
+        cout << "Pausanod el video: " << nombre << endl;
+    }
+
+    // Intento implementar la sobrecarga haciendo multiples versiones de mi metodo "buscar"
+    void buscar(string titulo);
+    void buscar(int idVideo);
+    void buscar(string genero, double calificacionMin);
+
+    virtual ~Video() {} // Destructor virtual
 };
 
 // Implemento el constructor
@@ -81,7 +91,7 @@ inline double Video::getCalificacion() {
     return calificacion;
 }
 
-// Implemento los metodos 'setters'
+// Implemento los metodos setters
 inline void Video::setId(int i) {
     id = i;
 }
@@ -115,6 +125,40 @@ inline void Video::mostrarInfoBasica() {
 inline void Video::mostrarInfo() {
     mostrarInfoBasica();
     cout << endl;
+}
+
+// Implemento los metodos de sobrecarga
+inline void Video::buscar(string titulo) {
+    cout << "Buscando videos por el titulo dado: " << titulo << endl;
+    if (nombre == titulo) {
+        cout << "Video encontrado " << endl;
+        mostrarInfoBasica();
+        cout << endl;
+    } else {
+        cout << "El video no se encontro" << endl;
+    } 
+}
+
+inline void Video::buscar(int idVideo) {
+    cout << "Buscando videos por ID: " << idVideo << endl;
+    if (id == idVideo) {
+        cout << "Video encontrado " << endl;
+        mostrarInfoBasica();
+        cout << endl;
+    } else {
+        cout << "El video no se encontro " << endl;
+    }
+}
+
+inline void Video::buscar(string generoVideo, double calificacionMin) {
+    cout << "Buscando videos por genero (" << generoVideo << ") y calificación minima (" << calificacionMin << ")" << endl;
+    if (genero == generoVideo && calificacion >= calificacionMin) {
+        cout << "Video encontrado" << endl;
+        mostrarInfoBasica();
+        cout << endl;
+    } else {
+        cout << "El video no se encontro " << endl;
+    }
 }
 
 #endif
