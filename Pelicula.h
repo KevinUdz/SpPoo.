@@ -20,6 +20,9 @@ public:
 
     // Aun no me queda del todo claro la sobreescritura pero la trato de implementar para lograr el polimorofismo
     void mostrarDetalles() override;
+    void reproducir() override;
+
+    void pausar() override;
 };
 
 // Se implementa un constructor que demuestra la herencia correcta
@@ -55,4 +58,12 @@ inline void Pelicula::mostrarDetalles() {
     mostrarDetallesPelicula();
 }
 
+inline void Pelicula::reproducir() {
+    cout << "Reproduciendo tu pelicula: " << getNombre() << endl;
+    cout << "La pelicula tiene una duracion de " << getDuracion() << " minutos y es de genero " << getGenero() << endl;
+}
+
+inline void Pelicula::pausar() {
+    cout << "Pausando pelicula: " << getNombre() << endl;
+}
 #endif
