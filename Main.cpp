@@ -13,10 +13,29 @@ int main() {
     videos[1] = new Serie(2, "Stranger Things", 50, "Misterio", 4.7);
 
     for (int i = 0; i < 2; ++i) {  // implemento un ciclo for para llamarlos
-        cout << "\nCargando video " << i + 1<< ":\n";
-        videos[i]->mostrarDetalles();  // Aqui estaria llamando a 'mostrarDetalles' haciendo uso del puntero '->' que tambien se vio en clase
-
+        cout << "\n=== VIDEO " << i + 1 << " ===" << endl;
+        
+        // Este sera el comportamiento específico de cada clase
+        videos[i]->mostrarDetalles();
+        cout << endl;
+        
+        // Cada clase tendra su propia implementación
+        videos[i]->reproducir();
+        cout << endl;
+        
+        videos[i]->pausar();
+        cout << endl;
     }
+
+    // Implemento sobrecarga con mismo metodo pero diferentes parametros
+    cout << "\n--- Buscando por titulo ---" << endl;
+    videos[0]->buscar("Inception");
+    
+    cout << "\n--- Buscando por ID ---" << endl;
+    videos[1]->buscar(2);
+    
+    cout << "\n--- Buscando por genero y calificacion ---" << endl;
+    videos[0]->buscar("Accion", 4.5);
 
     // Para evitar errores se libera la memoria
     for (int i = 0; i < 2; i++) {
