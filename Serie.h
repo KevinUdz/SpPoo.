@@ -20,6 +20,8 @@ public:
 
     // Mismo caso que con 'Pelicula.h'
     void mostrarDetalles() override;
+    void reproducir() override;
+    void pausar() override;
 };
 
 // Implementación del constructor, esto demostrara la herencia correcta
@@ -53,6 +55,15 @@ inline void Serie::mostrarDetallesSerie() {
 // Po resto mismo implemente un metodo virtual puro para video y asi logre que corriera el cogido
 inline void Serie::mostrarDetalles() {
     mostrarDetallesSerie();
+}
+
+inline void Serie::reproducir() {
+    cout << "Reproduciendo tu serie: " << getNombre() << endl;
+    cout << "Tu serie dura " << getDuracion() << " minutos por cada episodio y es de genero " << getGenero() << endl;
+}
+
+inline void Serie::pausar() {
+    cout << "Pausando tu serie " << endl;
 }
 
 #endif
