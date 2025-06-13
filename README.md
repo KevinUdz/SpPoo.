@@ -36,5 +36,11 @@ La clase base Video define atributos y métodos comunes para todo contenido de v
 
 **Punteros nulos**: Intentar acceder a un objeto que apunta a NULL haría que el programa crashee.
 
+**Cosas que cambie en el codigo**: En el anterior envio intente implementar una opcion para que la pelicula, serie o video se pudieran pausar (asi como se hace en la vida real), no logre implementarlo de manera correcta asi que decidi quitarlo por completo del codigo. 
+Tenia peliculas y series ya predeterminadas en el codigo, lo que hacian era que al llamar a consola pues se desplegaban automaticamente mostrandose como si fuesen opciones a elegir. Al revisarlo con el profe, se me encargo hacer una interfaz para poder interactuar con ella asi que tambien decidi borrar lo que se tenia de forma predeterminada para que fuese una interfaz vacia.
+Pelicula, serie y video se quedaron tal cual estaban antes, el unico que cambio fue mi main al realizar la interfaz (me costo bastante por que habian cosas que no me compilaban pero se logro)
+Se cambio el UML ya que el anterior era el del primer avance
+
 # Uml.
-https://www.canva.com/design/DAGnlpEu3BE/LfTRT_pYAHJW4puXz9zFqw/edit?utm_content=DAGnlpEu3BE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+https://lucid.app/lucidchart/66d5ddbf-68be-4ac6-911d-f268b98e2b79/edit?viewport_loc=38%2C-77%2C3307%2C1486%2C0_0&invitationId=inv_838c344d-ef14-404b-b521-ebb9d4e50600
+
