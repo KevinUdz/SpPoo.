@@ -49,10 +49,6 @@ public:
     virtual void mostrarDetalles() = 0;
     virtual void reproducir() = 0;
 
-    virtual void pausar () {
-        cout << "Pausanod el video: " << nombre << endl;
-    }
-
     // Intento implementar la sobrecarga haciendo multiples versiones de mi metodo "buscar"
     void buscar(string titulo);
     void buscar(int idVideo);
