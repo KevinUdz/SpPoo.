@@ -22,7 +22,6 @@ public:
     void mostrarDetalles() override;
     void reproducir() override;
 
-    void pausar() override;
 };
 
 // Se implementa un constructor que demuestra la herencia correcta
@@ -63,7 +62,4 @@ inline void Pelicula::reproducir() {
     cout << "La pelicula tiene una duracion de " << getDuracion() << " minutos y es de genero " << getGenero() << endl;
 }
 
-inline void Pelicula::pausar() {
-    cout << "Pausando pelicula: " << getNombre() << endl;
-}
 #endif
